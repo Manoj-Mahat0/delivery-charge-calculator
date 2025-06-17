@@ -4,6 +4,14 @@ from math import radians, sin, cos, sqrt, atan2
 
 app = FastAPI()
 
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Change this to ["http://localhost:3000"] or specific domain in production
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 # ---------- Haversine Formula ----------
 def calculate_distance_km(lat1, lon1, lat2, lon2):
     R = 6371  # Earth radius in kilometers
