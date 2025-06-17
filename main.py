@@ -1,6 +1,8 @@
 from fastapi import FastAPI, Query
 from pydantic import BaseModel
 from math import radians, sin, cos, sqrt, atan2
+from fastapi.middleware.cors import CORSMiddleware
+
 
 app = FastAPI()
 
